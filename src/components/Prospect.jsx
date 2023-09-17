@@ -1,4 +1,4 @@
-export const Prospect = ({ prospect, setProspect }) => {
+export const Prospect = ({ prospect, setProspect, deleteProspect }) => {
   const { company, contact, tel, email, date, obs } = prospect;
 
   let now = new Date();
@@ -46,7 +46,13 @@ export const Prospect = ({ prospect, setProspect }) => {
           >
             Editar
           </button>
-          <button type='button' className='py-2 px-10 bg-red-700 hover:bg-red-600 text-white font-bold uppercase rounded-md'>
+          <button
+            type='button'
+            className='py-2 px-10 bg-red-700 hover:bg-red-600 text-white font-bold uppercase rounded-md'
+            onClick={() => {
+              deleteProspect(prospect.id);
+            }}
+          >
             Eliminar
           </button>
         </div>

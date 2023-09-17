@@ -19,6 +19,16 @@ export const Form = ({ prospects, prospect, setProspects }) => {
     }
   };
 
+  const prospectObj = {
+    company,
+    contact,
+    tel,
+    email,
+    date,
+    obs,
+    id: generateId(),
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (prospectData.includes('')) {
@@ -28,10 +38,24 @@ export const Form = ({ prospects, prospect, setProspects }) => {
     setEmptyField(false);
 
     if (prospect.id) {
-      //editar registro
+      console.log('editando registro...');
+      let findUser = prospects.findIndex((user) => user.id === prospect.id);
+      console.log(findUser);
+      const prospectMod = {
+        company,
+        contact,
+        tel,
+        email,
+        date,
+        obs,
+      };
+      const updatedProspects = [...prospects];
+      updatedProspects[findUser] = prospectMod;
+      setProspects(updatedProspects);
     } else {
       //nuevo registro
-      setProspects([...prospects, { id: generateId(), company, contact, tel, email, date, obs }]);
+      console.log(prospectObj);
+      setProspects([...prospects, prospectObj]);
     }
     //reset form
     setCompany('');
