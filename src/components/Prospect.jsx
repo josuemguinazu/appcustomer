@@ -14,7 +14,7 @@ export const Prospect = ({ prospect, setProspect, deleteProspect }) => {
         </p>
         <p className='font-bold mb-3 text-gray-700 uppercase'>
           Nombre Contacto: {''}
-          <span className='font-normal normal-case'>{contact};o</span>
+          <span className='font-normal normal-case'>{contact}</span>
         </p>
         <p className='font-bold mb-3 text-gray-700 uppercase'>
           Teléfono: {''}

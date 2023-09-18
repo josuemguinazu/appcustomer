@@ -62,6 +62,7 @@ export const Form = ({ prospects, prospect, setProspects }) => {
     setContact('');
     setTel('');
     setEmail('');
+    setDate('');
     setObs('');
   };
 
@@ -165,7 +166,7 @@ export const Form = ({ prospects, prospect, setProspects }) => {
             onChange={(e) => setObs(e.target.value)}
           ></textarea>
           <input
-            value={prospect.id ? 'Editar informacion' : 'Agregar Paciente'}
+            value={prospect.id ? 'Editar informacion' : 'Agregar Prospecto'}
             type='submit'
             className='bg-cyan-600 w-full p-3 text-white uppercase font-bold hover:bg-cyan-700 cursor-pointer transition-all rounded-md'
           />
