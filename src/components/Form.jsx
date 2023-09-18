@@ -38,9 +38,7 @@ export const Form = ({ prospects, prospect, setProspects }) => {
     setEmptyField(false);
 
     if (prospect.id) {
-      console.log('editando registro...');
       let findUser = prospects.findIndex((user) => user.id === prospect.id);
-      console.log(findUser);
       const prospectMod = {
         company,
         contact,
@@ -54,7 +52,6 @@ export const Form = ({ prospects, prospect, setProspects }) => {
       setProspects(updatedProspects);
     } else {
       //nuevo registro
-      console.log(prospectObj);
       setProspects([...prospects, prospectObj]);
     }
     //reset form
